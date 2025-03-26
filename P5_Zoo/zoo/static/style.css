@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+
+:root{
+    --main-clr:#fbb03b;
+}
+.zoofont {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    color: var(--main-clr);
+  }
+.nav-img{
+    max-height:45px;
+    margin:5px auto;
+}
+
+.animal-btn{
+    text-align:center;
+    margin-top: 1rem;
+}
+.error-div{
+    margin: .75rem;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.flashed-msg{
+    background-color: #DCF1E4;
+    color: #0C622E;
+    padding: .5rem;
+    margin: .5rem;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    alignt-items:center;
+}
+

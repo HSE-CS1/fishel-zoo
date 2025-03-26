@@ -1,0 +1,14 @@
+<dialog open>
+    <article>
+      <h2>Are you sure you want to empty the cart?</h2>
+      <p>
+        You currently have {{ session.cart | length }} order(s) in your cart.Once you empty it you will not be able to get them back.
+      </p>
+      <footer>
+        <form action="/emptycart" method="post" class="grid">
+            <button formmethod="dialog" formaction="/cancelempty">Cancel</button>
+            <button class="contrast">Confirm</button>
+        </form>
+      </footer>
+    </article>
+  </dialog>

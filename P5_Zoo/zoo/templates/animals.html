@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3 class="zoofont">Animals from {{ session.get("exhibit") }}</h3>
+{% if not animals %}
+    <h4>SORRY, WE ARE EXPECTING ANIMALS IN THIS EXHIBIT SOON</h4>
+{% else %}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th scope="col">Species</th>
+                <th scope="col">Population</th>
+                <th scope="col">More Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animals %}
+                <tr>
+                    <td>{{ animal.species }}</td>
+                    <td>{{ animal.population }}</td>
+                    <td>
+                        <a href="/animals/{{ animal.id }}">
+                            <i class="bi bi-info-square-fill"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<a href="/" role="button">Choose a different exhibit?</a>
+{% endblock %}

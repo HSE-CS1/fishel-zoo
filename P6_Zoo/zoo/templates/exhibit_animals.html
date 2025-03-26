@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h3 class="zoofont">Animals from {{ session.get('exhibit') }}</h3>
+    {% if not animals_list %}
+    <h4>SORRY, WE WILL HAVE ANIMALS IN THIS EXHIBIT SOON!</h4>
+    {% else %}
+    <table class="striped">
+        <thead data-theme="dark">
+            <tr>
+                <th scope="col">Species</th>
+                <th scope="col">Population</th>
+                <th scope="col">Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animals_list %}
+                <tr>
+                    <td>{{ animal.species }}</td>
+                    <td>{{ animal.population }}</td>
+                    <td>
+                        <a href="/animals/{{ animal.id }}">
+                            <small>More <i class="bi bi-three-dots"></i></small>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif%}
+    <a href="/" role="button">See animals from another exhibit</a>
+
+{% endblock %}

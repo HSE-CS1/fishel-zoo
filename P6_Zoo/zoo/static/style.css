@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+
+:root{
+    --main-clr:#fbb03b;
+}
+.zoofont {
+    font-family: "Big Shoulders", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    color: var(--main-clr);
+  }
+.nav-img{
+    max-height:45px;
+    margin:5px auto;
+}
+
+.flash-msg{
+    background-color: #DCF1E4;
+    color:#0C622E;
+    padding: .5rem;
+    border-radius: .5rem;
+    text-align:center;
+    margin:.5rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+
+h1{
+    color: goldenrod;
+}

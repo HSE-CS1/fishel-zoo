@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="zoofont">Order Your Tickets</h2>
+    <form action="/tickets" method="post">
+        <input type="text" name="visitor-name" placeholder="Enter your first and lastname"
+            autofocus autocomplete="off" required>
+        <input type="text" name="visitor-contact" placeholder="Phone or email" autocomplete="off">
+        <input type="date" name="visit-date" value="{{ today }}">
+        <input type="number" name="number-of-tickets" min="0" value="1">
+        <input type="submit" value="Add to Cart">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<article data-theme="dark">
+    <h4 class="zoofont">{{ animal.species }}</h4>
+    <details name="description" open>
+        <summary>About...</summary>
+        <p>{{ animal.description }}</p>
+    </details>
+    <hr />
+    <details name="description" open>
+        <summary>Habitat...</summary>
+        <p>{{ animal.habitat }}</p>
+    </details>
+    <hr />
+    <details name="description" open>
+        <summary>Diet...</summary>
+        <p>{{ animal.diet }}</p>
+    </details>
+    <hr />
+    <details name="description" open>
+        <summary>Exhibit...</summary>
+        <p>{{ animal.exhibit }}</p>
+    </details>
+</article>
+
+{% endblock %}

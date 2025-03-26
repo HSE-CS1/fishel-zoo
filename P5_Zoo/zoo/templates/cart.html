@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- add a modal -->
+ {% if session.emptycart %}
+ <dialog open>
+    <article>
+      <h2>Do you really want to empty the cart</h2>
+      <p>
+        You have {{session.cart | length}} ticket orders in your cart. Once emptied, you will not be able to get them back.
+      </p>
+      <footer>
+        <form action="/emptycart" method="post" class="grid">
+            <button type="submit" formmethod="dialog" class="contrast">
+              Cancel
+            </button>
+            <button type="submit">Confirm</button>
+        </form>
+      </footer>
+    </article>
+  </dialog>
+  {% endif %}
+
+
+
+<h2 class="zoofont">Your cart ({{ session.cart | length }})</h2>
+{% for cart in session.cart %}
+    <article class="grid">
+        <p>Date:<br>{{ cart.get("visit-date") }}</p>
+        <p>Name:<br>{{ cart.get("visitor-name") }}</p>
+        <p># of Tickets:<br>{{ cart.get("number-of-tickets") }}</p>
+        <div>
+            <a href="/edit/{{ loop.index0 }}"><i class="bi bi-pencil"></i></a>
+            <a href="/del/{{ loop.index0 }}"><i class="bi bi-trash"></i></a>
+        </div>
+    </article>
+{% endfor %}
+<a href="/checkout" role="button">Checkout</a>
+<a href="/emptycart" role="button" class="contrast">Empty Cart</a>
+{% endblock %}

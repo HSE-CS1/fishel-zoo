@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article data-theme="dark">
+    <h1 class="zoofont">{{ exhibit.name }}</h1>
+    <div class="grid">
+        <h3>{{ exhibit.description }}</h3>
+        <div>
+            <div>
+                <img src="/static/images/{{ exhibit.picture }}">
+            </div>
+            <div class="animal-btn">
+                <a href="/animals/{{ exhibit.name }}" role="button">
+                    See the {{ exhibit.name }} animals
+                </a>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+
+{% endblock %}

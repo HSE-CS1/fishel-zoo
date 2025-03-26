@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="grid">
+    <article>
+        <header>
+            <h1 class="zoofont">Welcome to the Fishel Animal Kingdom ZOO!</h1>
+        </header>
+        <div>
+            <form action="/exhibits" method="post">
+                <select name="exhibit-name" aria-label="Select your exhibit" required>
+                    <option selected disabled value="">
+                      Select an exhibit...
+                    </option>
+                    {% for exhibit in exhibits %}
+                    <option value="{{exhibit.name}}">{{ exhibit.name }}</option>
+                    {% endfor %}
+
+                  </select>
+                  <input type="submit" value="See Exhibit">
+            </form>
+        </div>
+      </article>
+      <div>
+          <img src="/static/images/logo.png">
+      </div>
+</div>
+
+{% endblock%}

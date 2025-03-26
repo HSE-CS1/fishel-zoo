@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if session.emptycart %}
+<!-- show the modal to empty the cart -->
+    {% include "_emptycart.html" %}
+{% endif %}
+
+
+    <h2 class="zoofont">Your Cart ({{ session.get('cart') | length }})</h2>
+
+    {% for order in session.get('cart') %}
+    <article class="grid">
+        <p>Date:<br>{{ order.get('visit-date')}}</p>
+        <p>Name:<br>{{ order.get('visitor-name') }}</p>
+        <p># of Tickets:<br>{{ order.get('number-of-tickets') }}</p>
+        <div>
+            <a href="/edit/{{loop.index0}}"><i class="bi bi-pencil"></i></a>
+            <a href="/del/{{loop.index0}}"><i class="bi bi-trash"></i></a>
+        </div>
+    </article>
+    {% endfor %}
+    <a href="/emptycart" role="button">Empyt Cart</a>
+    <a href="/checkout" role="button" class="contrast">Checkout</a>
+{% endblock %}
